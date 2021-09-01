@@ -33,7 +33,7 @@ const Country = (props) => {
   return (
     <div className="py-5 my-5">
       <div className="text-lg text-center py-4 font-bold text-blue-600">
-        <p className="text-2xl">Oscar Fuquen</p>
+        <p className="text-2xl uppercase">whitesoft</p>
         <p>"Full Stack Engineer" <span className="text-black">position - Remote Job</span></p>
       </div>
       <div className="flex justify-center w-full ">
