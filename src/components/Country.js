@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { countryContext } from "../App";
+import swal from 'sweetalert';
 
 const Country = (props) => {
   const { countries, setCountries } = useContext(countryContext);
@@ -16,17 +17,15 @@ const Country = (props) => {
 
   const onSubmit = (data,e) => {
     console.log("from front-end", data);
-    fetch("http://localhost:5050/formData", {
+    fetch("https://arcane-cove-69385.herokuapp.com/formData", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
     })
         .then((res) => res.json())
         .then((res) => {
-            if (res.success) {
-                alert('user succefully')
-                e.target.reset()
-            }
+          swal("Good job!", "Your data submit in database!", "success");
+          e.target.reset()
         });
     console.log(data)
 };
